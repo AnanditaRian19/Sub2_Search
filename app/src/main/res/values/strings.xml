@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Github Search</string>
+    <string name="search">Search</string>
+    <string name="languange">Change Languange</string>
+    <string name="hint">Enter Name</string>
+    <string name="name">Name</string>
+    <string name="link">Link</string>
+    <string name="location">Location</string>
+    <string name="blog">Blog</string>
+    <string name="followers">Followers</string>
+    <string name="repository">Repository</string>
+    <string name="number">9k</string>
+    <string name="following">Following</string>
+    <string name="str_null">-</string>
+</resources>
