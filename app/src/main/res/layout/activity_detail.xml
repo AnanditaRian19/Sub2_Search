@@ -13,7 +13,6 @@
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:src="@android:color/darker_gray"
-        app:layout_constraintBottom_toTopOf="@+id/tvName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,9 +47,8 @@
         android:layout_marginTop="@dimen/_8sdp"
         android:fontFamily="serif"
         android:text="@string/blog"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvLocation" />
+        app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
 
     <!--    Number Follower-->
     <TextView
@@ -124,8 +122,11 @@
         android:id="@+id/barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="176dp"
         app:barrierDirection="end"
-        app:constraint_referenced_ids="ivAvatar" />
+        app:constraint_referenced_ids="ivAvatar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="88dp" />
 
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/loading"
@@ -134,9 +135,33 @@
         android:layout_marginTop="@dimen/_8sdp"
         app:indicatorColor="@color/colorPrimary"
         app:indicatorName="BallClipRotateIndicator"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/barrier2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tvBlog" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier2" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,34 +1,30 @@
 package com.belajar.search.Ui.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
-import com.belajar.search.Adapter.MainAdapter;
-import com.belajar.search.Adapter.UserSearchAdapter;
-import com.belajar.search.BuildConfig;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+
+import com.belajar.search.Adapter.ViewPagerAdapter;
 import com.belajar.search.Model.GithubDetail;
 import com.belajar.search.Model.GithubUser;
 import com.belajar.search.Network.ApiService;
 import com.belajar.search.Network.ServiceGenerator;
 import com.belajar.search.R;
 import com.bumptech.glide.Glide;
-import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.android.material.tabs.TabLayout;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,6 +34,8 @@ public class DetailActivity extends AppCompatActivity {
     private CircleImageView ivAvatar;
     private AVLoadingIndicatorView indicatorView;
     private TextView tvName, tvLocation, tvBlog, tvRepos, tvFollowers, tvFollowing;
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
     public static final String TAG = DetailActivity.class.getSimpleName();
 
     @Override
@@ -46,9 +44,12 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         getUserDetail();
+
     }
 
     private void initViews() {
+        viewPager = findViewById(R.id.viewPager);
+        tabLayout = findViewById(R.id.tabLayout);
         ivAvatar = findViewById(R.id.ivAvatar);
         tvName = findViewById(R.id.tvName);
         tvLocation = findViewById(R.id.tvLocation);
@@ -57,6 +58,10 @@ public class DetailActivity extends AppCompatActivity {
         tvFollowers = findViewById(R.id.tvFollowers);
         tvFollowing = findViewById(R.id.tvFollowing);
         indicatorView = findViewById(R.id.loading);
+
+        ViewPagerAdapter adapter = new ViewPagerAdapter(this, getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
 
         try {
             if (getSupportActionBar() != null) {

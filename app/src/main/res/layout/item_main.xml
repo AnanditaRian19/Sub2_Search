@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/_70sdp"
     android:layout_margin="@dimen/_4sdp"
     android:clickable="true"
     android:focusable="true"
@@ -16,8 +16,17 @@
     app:layout_constraintTop_toTopOf="parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="match_parent"
+            android:background="@color/container"
+            app:layout_constraintBottom_toBottomOf="@id/container"
+            app:layout_constraintStart_toStartOf="@id/container"
+            app:layout_constraintTop_toTopOf="@id/container" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivAvatar"

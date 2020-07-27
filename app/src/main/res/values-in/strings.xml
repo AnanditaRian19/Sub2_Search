@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search">Cari</string>
+    <string name="languange">Ganti Bahasa</string>
+    <string name="hint">Masukan Nama</string>
+    <string name="name">Nama</string>
+    <string name="link">Link</string>
+    <string name="location">Lokasi</string>
+    <string name="blog">Blog</string>
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="repository">Repository</string>
+    <string name="number">9k</string>
+    <string name="str_null">-</string>
+    <string name="no_data">Tidak Ada Data</string>
+</resources>

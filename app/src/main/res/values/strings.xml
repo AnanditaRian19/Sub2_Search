@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Github Search</string>
+    <string name="app_name" translatable="false">Github Search</string>
     <string name="search">Search</string>
     <string name="languange">Change Languange</string>
     <string name="hint">Enter Name</string>
@@ -8,10 +8,9 @@
     <string name="location">Location</string>
     <string name="blog">Blog</string>
     <string name="followers">Followers</string>
+    <string name="following">Following</string>
     <string name="repository">Repository</string>
     <string name="number">9k</string>
-    <string name="following">Following</string>
     <string name="str_null">-</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_data">No Data</string>
 </resources>
